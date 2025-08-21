@@ -1,0 +1,17 @@
+[
+  {
+    "username": "snith",
+    "key": "ASL7",
+    "expired": 1758224400695,
+    "role": "user",
+    "deviceId": "dev-678925ff",
+    "cooldown": 1755766896401
+  },
+  {
+    "username": "snithOwner",
+    "key": "2MLF",
+    "expired": 1757531461235,
+    "role": "owner",
+    "deviceId": "dev-432e6950"
+  }
+]

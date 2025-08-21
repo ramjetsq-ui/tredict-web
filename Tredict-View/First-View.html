@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TREDICT APPS</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(111deg, #7a1c1c 2.5%, #1a0b0b 100.3%);
+  color: #fff;
+}
+
+#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+section {
+  position: relative;
+  z-index: 1; /* pastikan teks/isi ada di atas partikel */
+  padding: 80px 20px;
+  color: white;
+}    
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.4); /* transparan */
+  backdrop-filter: blur(10px); /* efek blur kaca */
+  z-index: 1000;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.navbar .logo i {
+  margin-right: 8px;
+  color: #e63946; /* merah sesuai tema */
+}
+
+.navbar .nav-links {
+  display: flex;
+  font-size: 16px;
+  color: #fff;
+  gap: 25px; /* kasih jarak antar menu */
+}
+
+.nav-item {
+  color: #fff;              /* putih */
+  text-decoration: none;    /* hilangin underline */
+  font-size: 16px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #e63946; /* hover merah */
+  text-decoration: none;
+}
+
+/* Welcome Section */
+.welcome {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome h1 {
+  font-size: 48px;    
+  font-weight: bold;     
+  margin-top: 90px;   
+  line-height: 1.2;      
+}
+
+.welcome .cursor {
+  display: inline-block;
+  width: 10px;
+  height: 40px;
+  background-color: white;
+  margin-left: 3px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+#subtext {
+  font-size: 18px;
+  opacity: 0;
+  margin-top: 10px;
+  transition: opacity 1s ease;
+}
+
+/* Glow effect after typing */
+.glow {
+  color: #fff;
+  text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff0000, 0 0 30px #b30000;
+  animation: pop 0.6s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Membership */
+.membership {
+  background: rgba(255, 0, 0, 0.04);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 30px 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 1000px;   
+  margin: 90px auto;  
+  width: 90%;    
+}
+
+.membership h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.plan-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.plan {
+  background: rgba(255, 0, 0, 0.04);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 30px 24px;
+  border-radius: 20px;
+  width: 280px;
+  text-align: left;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+.plan h3 {
+  margin-bottom: 10px;
+}
+.plan .price {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.plan ul li {
+  margin: 8px 0;
+}
+.plan ul li i {
+  color: #ff4444;
+  margin-right: 6px;
+}
+.plan .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #ff4444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(255, 0, 0, 0.04);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-form h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #ff3d3d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-text {
+  flex: 1;
+  color: white;
+}
+
+.contact-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contact-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+ul li {
+  list-style: none;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+ul li i {
+  color: #0088cc; /* warna khas Telegram */
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+ul li a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  color: #ff6b6b;
+}
+
+
+/* Responsif (HP -> jadi 1 kolom) */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-form h2 {
+    text-align: center;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="particles"></div>
+  
+  <!-- Navbar -->
+  <div class="navbar">
+  <div class="logo">
+    <i class="fa-solid fa-khanda"></i>
+    TREDICT INVICTUS
+  </div>
+
+<div class="nav-links">
+  <div class="nav-links">
+    <a href="#membership" class="nav-item" onclick="scrollToCenter(event, 'membership')">Plans</a>
+    <a href="#contact-support" class="nav-item" onclick="scrollToCenter(event, 'contact-support')">Contact Support</a>
+    <a href="/login" class="nav-item">Login</a>
+</div>
+  </div>
+</div>
+
+
+  <!-- Welcome Section -->
+<section class="welcome">
+  <div class="welcome-content">
+    <h1 id="typing"></h1>
+    <p id="subtext">Empowering with Tredict</p>
+  </div>
+</section>
+
+  <!-- Membership Section -->
+  <section class="membership" id="membership">
+    <h2>Membership Plans</h2>
+    <div class="plan-container">
+      <div class="plan">
+        <h3><i class="fa-solid fa-user"></i> Basic</h3>
+        <div class="price">Rp 50.000 <span>/Lifetime</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
+        </ul>
+        <a href="#" class="btn">Select Plan</a>
+      </div>
+
+      <div class="plan">
+        <h3><i class="fa-solid fa-crown"></i> Vip</h3>
+        <div class="price">Rp 99.000 <span>/Lifetime</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
+        </ul>
+        <a href="#" class="btn">Select Plan</a>
+      </div>
+
+      <div class="plan">
+        <h3><i class="fa-solid fa-gem"></i> Vip+</h3>
+        <div class="price">Rp 150.000 <span>/Lifetime</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
+        </ul>
+        <a href="#" class="btn">Select Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact-support">
+  <div class="contact-container">
+    
+    <!-- Kolom Kiri (Form) -->
+    <div class="contact-form">
+  <h2>Contact Support</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="text" id="username" placeholder="Your Username" required />
+    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="statusMsg"></p>
+</div>
+
+    <!-- Kolom Kanan (Teks Tambahan) -->
+    <div class="contact-text">
+  <h3>Butuh Bantuan?</h3>
+     <p>
+  Tim support kami hadir sebagai bagian penting dari layanan Tredict Invictus,  
+  karena kami percaya bahwa dukungan yang baik adalah kunci dari pengalaman pengguna yang memuaskan.  
+  Melalui platform Telegram, kami menyediakan saluran komunikasi yang cepat, sederhana,  
+  dan selalu dapat diandalkan. Anda tidak perlu repot mengisi form yang rumit atau menunggu balasan email yang lama,  
+  cukup klik username Telegram kami dan Anda akan langsung terhubung dengan tim yang siap membantu.  
+</p>
+<p>
+  Klik username Telegram di bawah dan mulai percakapan dengan kami.
+</p>
+  <ul>
+  <li> <i class="fab fa-telegram"></i> <a href="https://t.me/Xatanicvxii" target="_blank">@Xatanicvxii</a> </li>
+  </ul>
+</div>
+
+  </div>
+</section>
+</body>
+<!-- Scroll Logic -->
+ <script>
+  function scrollToCenter(event, sectionId) {
+    event.preventDefault(); // cegah scroll default anchor
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    // hitung posisi agar section pas di tengah viewport
+    const scrollPosition = sectionTop - (windowHeight / 2) + (sectionHeight / 2);
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+<!-- Typing Logic -->
+ <script>
+  const text = "Tredict Invictus Present";
+  let i = 0;
+
+  function typingEffect() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typingEffect, 100);
+    } else {
+      document.getElementById("typing").classList.add("glow");
+      setTimeout(() => {
+        document.getElementById("subtext").style.opacity = 1;
+      }, 800);
+    }
+  }
+
+  window.onload = typingEffect;
+</script>
+
+<!-- Contact Support Via Bot -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const BOT_TOKEN = "8276359931:AAGAW4Y29FfwjsIoXquk6oI_M_mxSpA9Ajk";
+  const CHAT_ID = "5239114164"; // user id atau group id
+  const TELEGRAM_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const username = document.getElementById("username").value; // ganti email jadi username
+    const message = document.getElementById("message").value;
+
+    const text = `📩 *New Contact Form Message* \n\n👤 Name: ${name}\n🔗 Username: ${username}\n💬 Message: ${message}`;
+
+    fetch(TELEGRAM_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+        parse_mode: "Markdown"
+      }),
+    })
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire({
+        title: "Pesan Berhasil Terkirim!",
+        text: "Terima kasih sudah menghubungi kami, tim akan segera merespons via Telegram.",
+        icon: "success",
+        background: "rgba(20,20,20,0.95)",
+        color: "#fff",
+        showConfirmButton: false,
+        timer: 7000,
+        customClass: {
+          popup: 'swal-custom-popup'
+        }
+      });
+      document.getElementById("contactForm").reset();
+    })
+    .catch(err => {
+      Swal.fire({
+        title: "❌ Gagal!",
+        text: "Pesan tidak dapat terkirim, coba lagi nanti.",
+        icon: "error",
+        background: "rgba(20,20,20,0.95)",
+        color: "#fff",
+        showConfirmButton: false,
+        timer: 5000
+      });
+      console.error(err);
+    });
+  });
+</script>
+
+<style>
+.swal-custom-popup {
+  border-radius: 20px !important;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.7),
+              0 0 40px rgba(255, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+</style>
+
+</script>
+  <!-- Particleground Library -->
+  <script src="https://cdn.jsdelivr.net/gh/jnicol/particleground/jquery.particleground.min.js"></script>
+ <script> /*!
+ * Particleground
+ *
+ */
+ document.addEventListener('DOMContentLoaded', function () {
+  particleground(document.getElementById('particles'), {
+    dotColor: '#ff0000',
+    lineColor: '#e11010ff'
+  });
+  var intro = document.getElementById('intro');
+  intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+}, false);
+
+
+
+;(function(window, document) {
+  "use strict";
+  var pluginName = 'particleground';
+
+  function extend(out) {
+    out = out || {};
+    for (var i = 1; i < arguments.length; i++) {
+      var obj = arguments[i];
+      if (!obj) continue;
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === 'object')
+            deepExtend(out[key], obj[key]);
+          else
+            out[key] = obj[key];
+        }
+      }
+    }
+    return out;
+  };
+
+  var $ = window.jQuery;
+
+  function Plugin(element, options) {
+    var canvasSupport = !!document.createElement('canvas').getContext;
+    var canvas;
+    var ctx;
+    var particles = [];
+    var raf;
+    var mouseX = 0;
+    var mouseY = 0;
+    var winW;
+    var winH;
+    var desktop = !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i);
+    var orientationSupport = !!window.DeviceOrientationEvent;
+    var tiltX = 0;
+    var pointerX;
+    var pointerY;
+    var tiltY = 0;
+    var paused = false;
+
+    options = extend({}, window[pluginName].defaults, options);
+
+    /**
+     * Init
+     */
+    function init() {
+      if (!canvasSupport) { return; }
+
+      //Create canvas
+      canvas = document.createElement('canvas');
+      canvas.className = 'pg-canvas';
+      canvas.style.display = 'block';
+      element.insertBefore(canvas, element.firstChild);
+      ctx = canvas.getContext('2d');
+      styleCanvas();
+
+      // Create particles
+      var numParticles = Math.round((canvas.width * canvas.height) / options.density);
+      for (var i = 0; i < numParticles; i++) {
+        var p = new Particle();
+        p.setStackPos(i);
+        particles.push(p);
+      };
+
+      window.addEventListener('resize', function() {
+        resizeHandler();
+      }, false);
+
+      document.addEventListener('mousemove', function(e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      }, false);
+
+      if (orientationSupport && !desktop) {
+        window.addEventListener('deviceorientation', function () {
+          // Contrain tilt range to [-30,30]
+          tiltY = Math.min(Math.max(-event.beta, -30), 30);
+          tiltX = Math.min(Math.max(-event.gamma, -30), 30);
+        }, true);
+      }
+
+      draw();
+      hook('onInit');
+    }
+
+    /**
+     * Style the canvas
+     */
+    function styleCanvas() {
+      canvas.width = element.offsetWidth;
+      canvas.height = element.offsetHeight;
+      ctx.fillStyle = options.dotColor;
+      ctx.strokeStyle = options.lineColor;
+      ctx.lineWidth = options.lineWidth;
+    }
+
+    /**
+     * Draw particles
+     */
+    function draw() {
+      if (!canvasSupport) { return; }
+
+      winW = window.innerWidth;
+      winH = window.innerHeight;
+
+      // Wipe canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update particle positions
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].updatePosition();
+      };
+      // Draw particles
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].draw();
+      };
+
+      // Call this function next time screen is redrawn
+      if (!paused) {
+        raf = requestAnimationFrame(draw);
+      }
+    }
+
+    /**
+     * Add/remove particles.
+     */
+    function resizeHandler() {
+      // Resize the canvas
+      styleCanvas();
+
+      var elWidth = element.offsetWidth;
+      var elHeight = element.offsetHeight;
+
+      // Remove particles that are outside the canvas
+      for (var i = particles.length - 1; i >= 0; i--) {
+        if (particles[i].position.x > elWidth || particles[i].position.y > elHeight) {
+          particles.splice(i, 1);
+        }
+      };
+
+      // Adjust particle density
+      var numParticles = Math.round((canvas.width * canvas.height) / options.density);
+      if (numParticles > particles.length) {
+        while (numParticles > particles.length) {
+          var p = new Particle();
+          particles.push(p);
+        }
+      } else if (numParticles < particles.length) {
+        particles.splice(numParticles);
+      }
+
+      // Re-index particles
+      for (i = particles.length - 1; i >= 0; i--) {
+        particles[i].setStackPos(i);
+      };
+    }
+
+    /**
+     * Pause particle system
+     */
+    function pause() {
+      paused = true;
+    }
+
+    /**
+     * Start particle system
+     */
+    function start() {
+      paused = false;
+      draw();
+    }
+
+    /**
+     * Particle
+     */
+    function Particle() {
+      this.stackPos;
+      this.active = true;
+      this.layer = Math.ceil(Math.random() * 3);
+      this.parallaxOffsetX = 0;
+      this.parallaxOffsetY = 0;
+      // Initial particle position
+      this.position = {
+        x: Math.ceil(Math.random() * canvas.width),
+        y: Math.ceil(Math.random() * canvas.height)
+      }
+      // Random particle speed, within min and max values
+      this.speed = {}
+      switch (options.directionX) {
+        case 'left':
+          this.speed.x = +(-options.maxSpeedX + (Math.random() * options.maxSpeedX) - options.minSpeedX).toFixed(2);
+          break;
+        case 'right':
+          this.speed.x = +((Math.random() * options.maxSpeedX) + options.minSpeedX).toFixed(2);
+          break;
+        default:
+          this.speed.x = +((-options.maxSpeedX / 2) + (Math.random() * options.maxSpeedX)).toFixed(2);
+          this.speed.x += this.speed.x > 0 ? options.minSpeedX : -options.minSpeedX;
+          break;
+      }
+      switch (options.directionY) {
+        case 'up':
+          this.speed.y = +(-options.maxSpeedY + (Math.random() * options.maxSpeedY) - options.minSpeedY).toFixed(2);
+          break;
+        case 'down':
+          this.speed.y = +((Math.random() * options.maxSpeedY) + options.minSpeedY).toFixed(2);
+          break;
+        default:
+          this.speed.y = +((-options.maxSpeedY / 2) + (Math.random() * options.maxSpeedY)).toFixed(2);
+          this.speed.x += this.speed.y > 0 ? options.minSpeedY : -options.minSpeedY;
+          break;
+      }
+    }
+
+    /**
+     * Draw particle
+     */
+    Particle.prototype.draw = function() {
+  // === Titik Partikel ===
+  ctx.save();
+  ctx.shadowColor = '#ff0000';      // Warna glow
+  ctx.shadowBlur = 16;               // Intensitas blur
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  ctx.beginPath();
+  ctx.arc(
+    this.position.x + this.parallaxOffsetX,
+    this.position.y + this.parallaxOffsetY,
+    options.particleRadius / 2,
+    0,
+    Math.PI * 2,
+    true
+  );
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+
+  // === Garis Antar Partikel ===
+  ctx.save();
+  ctx.shadowColor = '#ff0000';
+  ctx.shadowBlur = 16;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  ctx.beginPath();
+  for (var i = particles.length - 1; i > this.stackPos; i--) {
+    var p2 = particles[i];
+
+    // Hitung jarak antar titik (Pythagoras)
+    var a = this.position.x - p2.position.x;
+    var b = this.position.y - p2.position.y;
+    var dist = Math.sqrt((a * a) + (b * b)).toFixed(2);
+
+    if (dist < options.proximity) {
+      ctx.moveTo(
+        this.position.x + this.parallaxOffsetX,
+        this.position.y + this.parallaxOffsetY
+      );
+
+      if (options.curvedLines) {
+        ctx.quadraticCurveTo(
+          Math.max(p2.position.x, p2.position.x),
+          Math.min(p2.position.y, p2.position.y),
+          p2.position.x + p2.parallaxOffsetX,
+          p2.position.y + p2.parallaxOffsetY
+        );
+      } else {
+        ctx.lineTo(
+          p2.position.x + p2.parallaxOffsetX,
+          p2.position.y + p2.parallaxOffsetY
+        );
+      }
+    }
+  }
+  ctx.stroke();
+  ctx.closePath();
+  ctx.restore();
+};
+
+
+    /**
+     * update particle position
+     */
+    Particle.prototype.updatePosition = function() {
+      if (options.parallax) {
+        if (orientationSupport && !desktop) {
+          // Map tiltX range [-30,30] to range [0,winW]
+          var ratioX = (winW - 0) / (30 - -30);
+          pointerX = (tiltX - -30) * ratioX + 0;
+          // Map tiltY range [-30,30] to range [0,winH]
+          var ratioY = (winH - 0) / (30 - -30);
+          pointerY = (tiltY - -30) * ratioY + 0;
+        } else {
+          pointerX = mouseX;
+          pointerY = mouseY;
+        }
+        // Calculate parallax offsets
+        this.parallaxTargX = (pointerX - (winW / 2)) / (options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // Easing equation
+        this.parallaxTargY = (pointerY - (winH / 2)) / (options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // Easing equation
+      }
+
+      var elWidth = element.offsetWidth;
+      var elHeight = element.offsetHeight;
+
+      switch (options.directionX) {
+        case 'left':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.position.x = elWidth - this.parallaxOffsetX;
+          }
+          break;
+        case 'right':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
+            this.position.x = 0 - this.parallaxOffsetX;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.speed.x = -this.speed.x;
+          }
+          break;
+      }
+
+      switch (options.directionY) {
+        case 'up':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.position.y = elHeight - this.parallaxOffsetY;
+          }
+          break;
+        case 'down':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight) {
+            this.position.y = 0 - this.parallaxOffsetY;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.speed.y = -this.speed.y;
+          }
+          break;
+      }
+
+      // Move particle
+      this.position.x += this.speed.x;
+      this.position.y += this.speed.y;
+    }
+
+    /**
+     * Setter: particle stacking position
+     */
+    Particle.prototype.setStackPos = function(i) {
+      this.stackPos = i;
+    }
+
+    function option (key, val) {
+      if (val) {
+        options[key] = val;
+      } else {
+        return options[key];
+      }
+    }
+
+    function destroy() {
+      console.log('destroy');
+      canvas.parentNode.removeChild(canvas);
+      hook('onDestroy');
+      if ($) {
+        $(element).removeData('plugin_' + pluginName);
+      }
+    }
+
+    function hook(hookName) {
+      if (options[hookName] !== undefined) {
+        options[hookName].call(element);
+      }
+    }
+
+    init();
+
+    return {
+      option: option,
+      destroy: destroy,
+      start: start,
+      pause: pause
+    };
+  }
+
+  window[pluginName] = function(elem, options) {
+    return new Plugin(elem, options);
+  };
+
+  window[pluginName].defaults = {
+    minSpeedX: 0.1,
+    maxSpeedX: 0.7,
+    minSpeedY: 0.1,
+    maxSpeedY: 0.7,
+    directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+    directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+    density: 10000, // How many particles will be generated: one particle every n pixels
+    dotColor: '#ff0000',
+    lineColor: '#ff0000',
+    particleRadius: 5, // Dot size
+    lineWidth: 1,
+    curvedLines: false,
+    proximity: 100, // How close two dots need to be before they join
+    parallax: true,
+    parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+    onInit: function() {},
+    onDestroy: function() {}
+  };
+
+  // nothing wrong with hooking into jQuery if it's there...
+  if ($) {
+    $.fn[pluginName] = function(options) {
+      if (typeof arguments[0] === 'string') {
+        var methodName = arguments[0];
+        var args = Array.prototype.slice.call(arguments, 1);
+        var returnVal;
+        this.each(function() {
+          if ($.data(this, 'plugin_' + pluginName) && typeof $.data(this, 'plugin_' + pluginName)[methodName] === 'function') {
+            returnVal = $.data(this, 'plugin_' + pluginName)[methodName].apply(this, args);
+          }
+        });
+        if (returnVal !== undefined){
+          return returnVal;
+        } else {
+          return this;
+        }
+      } else if (typeof options === "object" || !options) {
+        return this.each(function() {
+          if (!$.data(this, 'plugin_' + pluginName)) {
+            $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
+          }
+        });
+      }
+    };
+  }
+
+})(window, document);
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+      window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+      window.requestAnimationFrame = function(callback, element) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+          timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+      };
+
+    if (!window.cancelAnimationFrame)
+      window.cancelAnimationFrame = function(id) {
+        clearTimeout(id);
+      };
+}());
+</script>
+<script>
+  function generateDeviceIdFromUsername(username) {
+    // Contoh sederhana: hash-like ID dari username + fingerprint
+    const salt = "TREDICT-SALT-1"; // bisa diganti apa saja
+    const raw = username + salt + navigator.userAgent;
+    let hash = 0;
+    for (let i = 0; i < raw.length; i++) {
+      hash = (hash << 5) - hash + raw.charCodeAt(i);
+      hash |= 0;
+    }
+    return "dev-" + Math.abs(hash).toString(16);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      const usernameInput = form.querySelector("input[name='username']");
+      const deviceIdField = form.querySelector("input[name='deviceId']");
+
+      if (!usernameInput.value) {
+        alert("Username harus diisi!");
+        e.preventDefault();
+        return;
+      }
+
+      const deviceId = generateDeviceIdFromUsername(usernameInput.value);
+      deviceIdField.value = deviceId;
+
+      console.log("🔐 Generated device ID:", deviceId);
+    });
+  });
+</script>
+
+</body>
+</html>
