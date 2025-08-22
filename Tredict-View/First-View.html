@@ -44,56 +44,122 @@ section {
   color: white;
 }    
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* kiri kanan */
   padding: 15px 40px;
-  background: rgba(0, 0, 0, 0.4); /* transparan */
-  backdrop-filter: blur(10px); /* efek blur kaca */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  color: white;
   font-family: "Poppins", sans-serif;
 }
 
-.navbar .logo {
+/* Group kiri: icon + brand */
+.navbar .left {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  gap: 32px; /* jarak icon dan text */
+}
+
+.navbar .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .icon i {
+  font-size: 50px;
+  color: #ff4d4d;
+  text-shadow: 
+    0 0 10px rgba(255, 21, 0, 0.9),
+    0 0 20px rgba(255, 21, 0, 0.7),
+    0 0 40px rgba(255, 21, 0, 0.5),
+    0 0 80px rgba(255, 21, 0, 0.3);
+}
+
+.navbar .brand {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+  font-size: 23px;
   font-weight: bold;
-  color: #fff;
   letter-spacing: 1px;
 }
 
-.navbar .logo i {
-  margin-right: 8px;
-  color: #e63946; /* merah sesuai tema */
+.navbar .brand span {
+  font-family: 'Playfair Display', serif;
+  color: #ff0000;
+  text-shadow: 0 0 8px #ff0000;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* Nav links kanan */
 .navbar .nav-links {
   display: flex;
-  font-size: 16px;
-  color: #fff;
-  gap: 25px; /* kasih jarak antar menu */
+  gap: 25px;
 }
 
 .nav-item {
-  color: #fff;              /* putih */
-  text-decoration: none;    /* hilangin underline */
+  color: #fff;
+  text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
-  cursor: pointer;
 }
 
 .nav-item:hover {
-  color: #e63946; /* hover merah */
+  color: #e63946;
   text-decoration: none;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .icon {
+      font-size: 34px;
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .icon img {
+     width: 80px;
+     height: 80px;
+     object-fit: cover;
+     border-radius: 50%;
+     box-shadow: 0 0 20px rgba(255, 21, 0, 0.8);
+    }
+  .navbar .brand {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+
+.navbar .nav-links {
+  display: flex;         /* biar sejajar */
+  gap: 25px;             /* jarak antar menu */
+}
+
+.nav-item {
+  color: #fff;           /* warna putih */
+  text-decoration: none; /* hilangin underline */
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #e63946;        /* hover merah */
+  text-decoration: none; /* hilangin underline */
+}}
+
 
 /* Welcome Section */
 .welcome {
@@ -201,7 +267,7 @@ section {
   color: #ff4444;
   margin-right: 6px;
 }
-    
+
 .plan .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -307,17 +373,6 @@ ul li a:hover {
   color: #ff6b6b;
 }
 
-
-/* Responsif (HP -> jadi 1 kolom) */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-  .contact-form h2 {
-    text-align: center;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -327,29 +382,25 @@ html {
 
 <body>
   <div id="particles"></div>
+ <div class="navbar">
+  <div class="left">
+    <div class="icon"><i class="fas fa-khanda"></i></div>
+    <div class="brand">TREDICT <span>INVICTUS</span></div>
+  </div>
   
-  <!-- Navbar -->
-  <div class="navbar">
-  <div class="logo">
-    <i class="fa-solid fa-khanda"></i>
-    TREDICT INVICTUS
-  </div>
-
-<div class="nav-links">
   <div class="nav-links">
-    <a href="#membership" class="nav-item" onclick="scrollToCenter(event, 'membership')">Plans</a>
-    <a href="#contact-support" class="nav-item" onclick="scrollToCenter(event, 'contact-support')">Contact Support</a>
+    <a href="#membership" class="nav-item">Plans</a>
+    <a href="#about" class="nav-item">About</a>
+    <a href="#contact-support" class="nav-item">Contact Support</a>
     <a href="/login" class="nav-item">Login</a>
-</div>
   </div>
 </div>
-
 
   <!-- Welcome Section -->
 <section class="welcome">
   <div class="welcome-content">
     <h1 id="typing"></h1>
-    <p id="subtext">Empowering with Tredict</p>
+    <p id="subtext">Xatanical Project Studio</p>
   </div>
 </section>
 
@@ -358,61 +409,41 @@ html {
     <h2>Membership Plans</h2>
     <div class="plan-container">
       <div class="plan">
-        <h3><i class="fa-solid fa-key"></i> Basic Plan</h3>
-        <div class="price">Rp 80.000 <span>/Key</span></div>
+        <h3><i class="fa-solid fa-user"></i> Basic</h3>
+        <div class="price">Rp 50.000 <span>/Lifetime</span></div>
         <ul>
-          <li><i class="fa-solid fa-check"></i> 1 Access Key</li>
-          <li><i class="fa-solid fa-check"></i> Valid for 30 Days</li>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
           <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
         </ul>
-       <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo%20Xatanical,%20apakah%20membership%20User%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
+        <a href="#" class="btn">Select Plan</a>
       </div>
-      
-     <div class="plan">
-  <h3><i class="fa-solid fa-star"></i> Reseller Plan</h3>
-  <div class="price">Rp 130.000 <span>/Lifetime</span></div>
-  <ul>
-    <li><i class="fa-solid fa-check"></i> 1 Reseller Access Key</li>
-    <li><i class="fa-solid fa-check"></i> Lifetime Validity</li>
-    <li><i class="fa-solid fa-check"></i> Can Generate User Keys</li>
-    <li><i class="fa-solid fa-check"></i> Standard Support</li>
-    <li><i class="fa-solid fa-check"></i> Dashboard Access</li>
-  </ul>
-  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Reseller%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
-</div>
 
+      <div class="plan">
+        <h3><i class="fa-solid fa-crown"></i> Vip</h3>
+        <div class="price">Rp 99.000 <span>/Lifetime</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
+        </ul>
+        <a href="#" class="btn">Select Plan</a>
+      </div>
 
-     <div class="plan">
-  <h3><i class="fa-solid fa-crown"></i> Admin Plan</h3>
-  <div class="price">Rp 170.000 <span>/Lifetime</span></div>
-  <ul>
-    <li><i class="fa-solid fa-check"></i> 1 Admin Access Key</li>
-    <li><i class="fa-solid fa-check"></i> Lifetime Validity</li>
-    <li><i class="fa-solid fa-check"></i> Can Generate Reseller Keys</li>
-    <li><i class="fa-solid fa-check"></i> Can Generate User Keys</li>
-    <li><i class="fa-solid fa-check"></i> Unlimited Requests per Day</li>
-    <li><i class="fa-solid fa-check"></i> Priority Support</li>
-    <li><i class="fa-solid fa-check"></i> Dashboard Acccess</li>
-  </ul>
-  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Admin%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
-</div>
-
-
-     <div class="plan">
-  <h3><i class="fa-solid fa-gem"></i> Owner Plan</h3>
-  <div class="price">Rp 250.000 <span>/Lifetime</span></div>
-  <ul>
-    <li><i class="fa-solid fa-check"></i> Full Access to API Endpoints</li>
-    <li><i class="fa-solid fa-check"></i> Create & Manage User Keys</li>
-    <li><i class="fa-solid fa-check"></i> Create & Manage Reseller Keys</li>
-    <li><i class="fa-solid fa-check"></i> Create & Manage Admin Keys</li>
-    <li><i class="fa-solid fa-check"></i> Unlimited Requests Per Day</li>
-    <li><i class="fa-solid fa-check"></i> Priority Support</li>
-    <li><i class="fa-solid fa-check"></i> Full Access Dashboard</li>
-  </ul>
-  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Owners%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
-</div>
-
+      <div class="plan">
+        <h3><i class="fa-solid fa-gem"></i> Vip+</h3>
+        <div class="price">Rp 150.000 <span>/Lifetime</span></div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
+          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
+        </ul>
+        <a href="#" class="btn">Select Plan</a>
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
