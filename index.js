@@ -3946,6 +3946,35 @@ app.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
+// Contoh: user klik /xatanicvxii/user
+app.get("/xatanicvxii/reseller", (req, res) => {
+  const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli User Key!");
+  
+  // Redirect ke telegram share
+  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+});
+
+// Contoh: user klik /xatanicvxii/reseller
+app.get("/xatanicvxii/reseller", (req, res) => {
+  const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Reseller Key!");
+  
+  // Redirect ke telegram share
+  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+});
+
+// Kalau mau untuk admin key
+app.get("/xatanicvxii/admin", (req, res) => {
+  const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Admin Key!");
+  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+});
+
+// Kalau mau untuk owners key
+app.get("/xatanicvxii/owners", (req, res) => {
+  const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Owners Key!");
+  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+});
+
+
 app.listen(PORT, () => {
   console.log(`✅ Server aktif di port ${PORT}`);
 });
