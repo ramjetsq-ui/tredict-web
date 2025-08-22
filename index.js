@@ -311,7 +311,7 @@ console.log(chalk.red(`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 bot.launch();
 console.log(chalk.red(`
-╭─☐ BOT NECRO  
+╭─☐ BOT TREDICT
 ├─ ID OWN : ${OwnerId}
 ├─ BOT : RUNNING... ✅
 ╰───────────────────`));
@@ -529,7 +529,7 @@ bot.command("/addkey", async (ctx) => {
 
     // Kirim file APK
     await ctx.replyWithDocument(
-      { source: path.join(__dirname, "public", "NECRO.apk") },
+      { source: path.join(__dirname, "public", "TREDICT.apk") },
       {
         caption: [
           "*ORIGINAL OFFICIAL APPS*",
@@ -808,7 +808,7 @@ async function Warlock(X) {
       ],
     });
 
-    console.log(chalk.red("─────「 ⏤!NECRO iNVASiON!⏤ 」─────"));
+    console.log(chalk.red("─────「 ⏤!TREDICT iNVASiON!⏤ 」─────"));
   } catch (err) {
     console.error(err);
   }
@@ -2824,7 +2824,7 @@ const executionPage = (
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NECRO-APi</title>
+  <title>TREDICT - API</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -3181,7 +3181,6 @@ app.get("/login", (req, res) => {
   });
 });
 
-
 app.post("/auth", (req, res) => {
   const { username, key, deviceId } = req.body;
   const users = getUsers();
@@ -3414,7 +3413,7 @@ const userRows = users
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard - NecroPanel</title>
+  <title>Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- TailwindCSS -->
