@@ -201,14 +201,25 @@ section {
   color: #ff4444;
   margin-right: 6px;
 }
+    
 .plan .btn {
   display: inline-block;
   padding: 10px 18px;
-  background: #ff4444;
+  background: #222; /* warna gelap */
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
+  border: 2px solid #ff4444; /* garis merah */
+  box-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 30px #ff4444; /* efek glow */
+  transition: all 0.3s ease; /* animasi halus saat hover */
 }
+
+.plan .btn:hover {
+  background: #111; /* lebih gelap saat hover */
+  box-shadow: 0 0 15px #ff6666, 0 0 25px #ff6666, 0 0 40px #ff6666; /* glow lebih terang saat hover */
+  border-color: #ff6666;
+}
+
 
 /* Contact Section */
 .contact-section {
@@ -347,41 +358,61 @@ html {
     <h2>Membership Plans</h2>
     <div class="plan-container">
       <div class="plan">
-        <h3><i class="fa-solid fa-user"></i> Basic</h3>
-        <div class="price">Rp 50.000 <span>/Lifetime</span></div>
+        <h3><i class="fa-solid fa-key"></i> Basic Plan</h3>
+        <div class="price">Rp 80.000 <span>/Key</span></div>
         <ul>
-          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
-          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
+          <li><i class="fa-solid fa-check"></i> 1 Access Key</li>
+          <li><i class="fa-solid fa-check"></i> Valid for 30 Days</li>
           <li><i class="fa-solid fa-check"></i> Standard Support</li>
-          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
         </ul>
-        <a href="#" class="btn">Select Plan</a>
+       <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo%20Xatanical,%20apakah%20membership%20User%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
       </div>
+      
+     <div class="plan">
+  <h3><i class="fa-solid fa-star"></i> Reseller Plan</h3>
+  <div class="price">Rp 130.000 <span>/Lifetime</span></div>
+  <ul>
+    <li><i class="fa-solid fa-check"></i> 1 Reseller Access Key</li>
+    <li><i class="fa-solid fa-check"></i> Lifetime Validity</li>
+    <li><i class="fa-solid fa-check"></i> Can Generate User Keys</li>
+    <li><i class="fa-solid fa-check"></i> Standard Support</li>
+    <li><i class="fa-solid fa-check"></i> Dashboard Access</li>
+  </ul>
+  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Reseller%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
+</div>
 
-      <div class="plan">
-        <h3><i class="fa-solid fa-crown"></i> Vip</h3>
-        <div class="price">Rp 99.000 <span>/Lifetime</span></div>
-        <ul>
-          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
-          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
-          <li><i class="fa-solid fa-check"></i> Standard Support</li>
-          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
-        </ul>
-        <a href="#" class="btn">Select Plan</a>
-      </div>
 
-      <div class="plan">
-        <h3><i class="fa-solid fa-gem"></i> Vip+</h3>
-        <div class="price">Rp 150.000 <span>/Lifetime</span></div>
-        <ul>
-          <li><i class="fa-solid fa-check"></i> Access API Endpoints</li>
-          <li><i class="fa-solid fa-check"></i> Limited Requests Day</li>
-          <li><i class="fa-solid fa-check"></i> Standard Support</li>
-          <li><i class="fa-solid fa-check"></i> Web Panel Access</li>
-        </ul>
-        <a href="#" class="btn">Select Plan</a>
-      </div>
-    </div>
+     <div class="plan">
+  <h3><i class="fa-solid fa-crown"></i> Admin Plan</h3>
+  <div class="price">Rp 170.000 <span>/Lifetime</span></div>
+  <ul>
+    <li><i class="fa-solid fa-check"></i> 1 Admin Access Key</li>
+    <li><i class="fa-solid fa-check"></i> Lifetime Validity</li>
+    <li><i class="fa-solid fa-check"></i> Can Generate Reseller Keys</li>
+    <li><i class="fa-solid fa-check"></i> Can Generate User Keys</li>
+    <li><i class="fa-solid fa-check"></i> Unlimited Requests per Day</li>
+    <li><i class="fa-solid fa-check"></i> Priority Support</li>
+    <li><i class="fa-solid fa-check"></i> Dashboard Acccess</li>
+  </ul>
+  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Admin%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
+</div>
+
+
+     <div class="plan">
+  <h3><i class="fa-solid fa-gem"></i> Owner Plan</h3>
+  <div class="price">Rp 250.000 <span>/Lifetime</span></div>
+  <ul>
+    <li><i class="fa-solid fa-check"></i> Full Access to API Endpoints</li>
+    <li><i class="fa-solid fa-check"></i> Create & Manage User Keys</li>
+    <li><i class="fa-solid fa-check"></i> Create & Manage Reseller Keys</li>
+    <li><i class="fa-solid fa-check"></i> Create & Manage Admin Keys</li>
+    <li><i class="fa-solid fa-check"></i> Unlimited Requests Per Day</li>
+    <li><i class="fa-solid fa-check"></i> Priority Support</li>
+    <li><i class="fa-solid fa-check"></i> Full Access Dashboard</li>
+  </ul>
+  <a href="https://t.me/Xatanicvxii/url?url=&text=Haloo..%20Xatanical,%20apakah%20membership%20Owners%20%20Plans%20untuk%20websites%20tredictct%20masih%20tersedia%3F" class="btn" target="_blank">Select Plan</a>
+</div>
+
   </section>
 
   <!-- Contact Section -->
