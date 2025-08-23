@@ -353,18 +353,38 @@ section {
 
 .plan .btn {
   display: inline-block;
-  background: #ff2e2e;
+  background: #ff4d4d; /* merah lebih cerah */
   color: white;
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 10px;
   font-weight: bold;
+  border: 2px solid #ff6666; /* line color merah terang */
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Glow effect */
+.plan .btn::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 12px;
+  border: 2px solid #ff9999; /* glow line merah terang */
+  opacity: 0;
   transition: 0.3s;
 }
 
 .plan .btn:hover {
-  background: #ff4747;
-  box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+  background: #ff6666; /* lebih terang saat hover */
+  box-shadow: 0 0 12px rgba(255, 102, 102, 0.6);
+}
+
+.plan .btn:hover::after {
+  opacity: 1; /* tampilkan glow border saat hover */
 }
 
 
