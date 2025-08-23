@@ -3947,11 +3947,11 @@ app.get("/logout", (req, res) => {
 });
 
 // Contoh: user klik /xatanicvxii/user
-app.get("/xatanicvxii/reseller", (req, res) => {
+app.get("/xatanicvxii/user", (req, res) => {
   const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli User Key!");
   
   // Redirect ke telegram share
-  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+  res.redirect(`https://t.me/xatanicvxii/url=&text=${message}`);
 });
 
 // Contoh: user klik /xatanicvxii/reseller
@@ -3959,19 +3959,19 @@ app.get("/xatanicvxii/reseller", (req, res) => {
   const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Reseller Key!");
   
   // Redirect ke telegram share
-  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+  res.redirect(`https://t.me/xatanicvxii/url=&text=${message}`);
 });
 
 // Kalau mau untuk admin key
 app.get("/xatanicvxii/admin", (req, res) => {
   const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Admin Key!");
-  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+  res.redirect(`https://t.me/xatanicvxii/url=&text=${message}`);
 });
 
 // Kalau mau untuk owners key
 app.get("/xatanicvxii/owners", (req, res) => {
   const message = encodeURIComponent("Haloo Xatanical, Saya ingin membeli Owners Key!");
-  res.redirect(`https://t.me/share/url?url=&text=${message}`);
+  res.redirect(`https://t.me/xatanicvxii/url=&text=${message}`);
 });
 
 
